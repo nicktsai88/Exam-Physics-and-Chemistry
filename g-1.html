@@ -3,30 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#173f4f">
+  <meta name="theme-color" content="#6676d8">
   <title>國三自然（5）四校段考分類解析</title>
   <style>
     :root {
       --font-scale: 1;
-      --ink: #18303a;
-      --muted: #5d7078;
-      --paper: #fffdf8;
-      --canvas: #edf4f1;
-      --line: #c9d8d5;
-      --navy: #173f4f;
-      --teal: #0a796f;
-      --teal-soft: #d9f0eb;
-      --amber: #d77a18;
-      --amber-soft: #fff0d7;
-      --blue: #2d5f9a;
-      --blue-soft: #e5eef9;
-      --earth: #7a5638;
-      --earth-soft: #eee3d7;
-      --green: #16704c;
-      --green-soft: #e1f3e9;
-      --red: #a83737;
-      --red-soft: #fae8e8;
-      --shadow: 0 10px 28px rgba(23, 63, 79, .10);
+      --ink: #35405f;
+      --muted: #69738d;
+      --paper: #fffefe;
+      --canvas: #f4f9ff;
+      --line: #d8e5f1;
+      --navy: #5968bd;
+      --teal: #2b8f8a;
+      --teal-soft: #e0f8f4;
+      --amber: #df8a45;
+      --amber-soft: #fff1df;
+      --blue: #6378cf;
+      --blue-soft: #eaf0ff;
+      --earth: #8b70c2;
+      --earth-soft: #f1ebff;
+      --green: #2f8c6d;
+      --green-soft: #e5f8ef;
+      --red: #c95372;
+      --red-soft: #fff0f4;
+      --rose: #dc7896;
+      --rose-soft: #ffeaf1;
+      --lemon: #e5b94f;
+      --lemon-soft: #fff8d9;
+      --shadow: 0 12px 30px rgba(91, 106, 181, .13);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; background: var(--canvas); }
@@ -34,9 +38,10 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at 15% 5%, rgba(10,121,111,.08), transparent 30rem),
-        radial-gradient(circle at 90% 12%, rgba(215,122,24,.08), transparent 28rem),
-        var(--canvas);
+        radial-gradient(circle at 10% 3%, rgba(107, 213, 198, .23), transparent 27rem),
+        radial-gradient(circle at 92% 10%, rgba(239, 151, 180, .20), transparent 29rem),
+        radial-gradient(circle at 75% 72%, rgba(161, 144, 230, .16), transparent 31rem),
+        linear-gradient(145deg, #f7fcff 0%, #fff9fc 48%, #f7fbff 100%);
       font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
       font-size: calc(1rem * var(--font-scale));
       line-height: 1.65;
@@ -48,11 +53,12 @@
       border-radius: .75rem;
       padding: .58em .9em;
       color: var(--ink);
-      background: white;
+      background: linear-gradient(135deg, #ffffff 0%, #f6fbff 100%);
       cursor: pointer;
       font-weight: 700;
     }
-    button:hover { filter: brightness(.98); }
+    button { transition: transform .16s ease, box-shadow .16s ease, filter .16s ease; }
+    button:hover { filter: brightness(1.01); transform: translateY(-1px); box-shadow: 0 6px 14px rgba(91,106,181,.12); }
     button:disabled { cursor: not-allowed; opacity: .46; }
     button:focus-visible, input:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
       outline: .22rem solid #ffbd4a;
@@ -64,34 +70,37 @@
       position: sticky; top: 0; z-index: 40;
       display: flex; gap: .55rem; align-items: center; flex-wrap: wrap;
       min-height: 3.9rem; padding: .5rem max(.75rem, calc((100vw - 1500px)/2));
-      background: rgba(23, 63, 79, .97); color: white;
-      box-shadow: 0 3px 18px rgba(0,0,0,.18);
+      background: linear-gradient(110deg, rgba(89,104,189,.97), rgba(82,139,190,.97) 48%, rgba(43,143,138,.97)); color: white;
+      box-shadow: 0 5px 20px rgba(76,85,155,.22);
     }
-    .topbar button { color: white; background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.24); }
-    .topbar button[aria-pressed="true"] { color: #12333f; background: #fff3c9; }
+    .topbar button { color: white; background: linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.22)); border-color: rgba(255,255,255,.30); }
+    .topbar button[aria-pressed="true"] { color: #51446e; background: linear-gradient(135deg, #fff8cf, #ffe6ef); }
     .topbar .font-value { min-width: 4.2rem; text-align: center; font-variant-numeric: tabular-nums; }
     .topbar .spacer { flex: 1 1 1rem; }
-    .identity-pill, .sync-pill { border-radius: 999px; padding: .35rem .7rem; background: rgba(255,255,255,.12); }
+    .identity-pill, .sync-pill { border: 1px solid rgba(255,255,255,.22); border-radius: 999px; padding: .35rem .7rem; background: linear-gradient(135deg, rgba(255,255,255,.13), rgba(255,255,255,.23)); }
     .shell { width: min(1500px, 100%); margin: 0 auto; padding: 1.2rem; }
     .hero {
       display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(16rem, .6fr); gap: 1rem;
       padding: clamp(1.2rem, 3vw, 2.4rem); border-radius: 1.4rem; color: white;
-      background: linear-gradient(125deg, #173f4f 0%, #0c6f69 63%, #18806f 100%);
+      position: relative;
+      background: linear-gradient(130deg, #6676d8 0%, #4aa9b1 46%, #d87999 100%);
       box-shadow: var(--shadow); overflow: hidden;
     }
+    .hero::after { content: "🌈  ✨  🧪"; position: absolute; right: 2.5%; bottom: -.45rem; font-size: clamp(2rem, 5vw, 4.6rem); opacity: .18; transform: rotate(-7deg); pointer-events: none; }
     .hero h1 { margin: 0 0 .45rem; font-size: clamp(1.7rem, 4vw, 3rem); line-height: 1.15; }
-    .hero p { margin: .3rem 0; max-width: 65ch; color: #e6f4f0; }
+    .hero p { margin: .3rem 0; max-width: 65ch; color: #f7fbff; }
     .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: .65rem; align-self: stretch; }
-    .stat { display: grid; place-content: center; min-height: 5.2rem; border: 1px solid rgba(255,255,255,.22); border-radius: 1rem; background: rgba(255,255,255,.1); text-align: center; }
+    .stat { display: grid; place-content: center; min-height: 5.2rem; border: 1px solid rgba(255,255,255,.30); border-radius: 1rem; background: linear-gradient(145deg, rgba(255,255,255,.13), rgba(255,255,255,.23)); text-align: center; backdrop-filter: blur(4px); }
     .stat strong { font-size: 1.55em; line-height: 1.1; }
-    .offline-banner { margin-top: .85rem; padding: .75rem 1rem; border: 1px solid #edc678; border-radius: .8rem; background: #fff5d9; }
-    .panel { margin-top: 1rem; padding: 1rem; background: rgba(255,253,248,.96); border: 1px solid var(--line); border-radius: 1rem; box-shadow: var(--shadow); }
-    .panel h2, .panel h3 { margin-top: 0; }
+    .offline-banner { margin-top: .85rem; padding: .75rem 1rem; border: 1px solid #efcf81; border-radius: .8rem; background: linear-gradient(135deg, #fff9dc, #fff0e9); }
+    .panel { margin-top: 1rem; padding: 1rem; background: linear-gradient(145deg, rgba(255,255,255,.97), rgba(246,250,255,.97)); border: 1px solid var(--line); border-radius: 1rem; box-shadow: var(--shadow); }
+    .panel h2, .panel h3 { margin-top: 0; color: #5664b3; }
     .learner-grid { display: grid; grid-template-columns: minmax(17rem,.75fr) minmax(0,1.25fr); gap: 1rem; }
-    .privacy-note { padding: .75rem; border-left: .35rem solid var(--amber); background: var(--amber-soft); }
+    .privacy-note { padding: .75rem; border-left: .35rem solid var(--rose); background: linear-gradient(135deg, var(--lemon-soft), var(--rose-soft)); }
     .avatar-list { display: flex; flex-wrap: wrap; gap: .35rem; margin: .55rem 0; }
     .avatar-list button { font-size: 1.45rem; padding: .3rem .55rem; border-color: var(--line); }
-    .avatar-list button[aria-pressed="true"] { background: #fff0bf; border-color: #d8951a; }
+    .avatar-list button { background: linear-gradient(145deg, #fff, #f4f0ff); }
+    .avatar-list button[aria-pressed="true"] { background: linear-gradient(135deg, #fff2b9, #ffddea); border-color: #db8aa2; }
     .learner-create { display: grid; grid-template-columns: minmax(9rem,1fr) auto; gap: .5rem; }
     .learner-create input, .search-box input { min-width: 0; padding: .62rem .7rem; border: 1px solid #9db0ae; border-radius: .7rem; background: white; }
     .learner-list { display: flex; flex-wrap: wrap; gap: .5rem; }
@@ -99,66 +108,71 @@
     .learner-chip .avatar { grid-row: 1 / span 2; font-size: 1.55rem; }
     .learner-chip small { color: var(--muted); }
     .toolbar-panel { display: flex; flex-wrap: wrap; gap: .55rem; align-items: center; }
-    .primary { color: white; background: var(--teal); }
-    .warn { color: #4d2d00; background: #ffd67b; }
-    .danger { color: white; background: var(--red); }
+    .primary { color: white; background: linear-gradient(135deg, #6478d2, #35a39a); }
+    .warn { color: #65440d; background: linear-gradient(135deg, #ffe48d, #ffc7aa); }
+    .danger { color: white; background: linear-gradient(135deg, #d85e7d, #b8569a); }
     .filter-summary { display: flex; gap: .7rem; align-items: center; flex-wrap: wrap; }
     .print-status { min-height: 1.4em; color: var(--teal); font-weight: 750; }
     .filter-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: .75rem; margin-top: .75rem; }
-    .chapter-filter { border: 1px solid var(--line); border-radius: .8rem; padding: .7rem; background: white; }
+    .chapter-filter { border: 1px solid var(--line); border-radius: .8rem; padding: .7rem; background: linear-gradient(145deg, #ffffff, #f4f5ff); }
+    .chapter-filter:nth-child(3n+2) { background: linear-gradient(145deg, #ffffff, #eefbf7); }
+    .chapter-filter:nth-child(3n) { background: linear-gradient(145deg, #ffffff, #fff2f7); }
     .chapter-filter h3 { margin: 0 0 .35rem; font-size: 1.02em; }
     .topic-check { display: grid; grid-template-columns: auto 1fr auto; gap: .45rem; align-items: start; padding: .32rem 0; }
     .topic-check small { color: var(--muted); }
     .answer-key { display: grid; grid-template-columns: repeat(auto-fill, minmax(6.2rem,1fr)); gap: .35rem; }
-    .answer-key a { color: inherit; text-decoration: none; padding: .35rem .5rem; border: 1px solid var(--line); border-radius: .55rem; background: white; }
+    .answer-key a { color: inherit; text-decoration: none; padding: .35rem .5rem; border: 1px solid var(--line); border-radius: .55rem; background: linear-gradient(135deg, #fff, #eef8ff); }
     .print-answer-sheet { display: none; }
     .workspace { display: grid; grid-template-columns: 16.5rem minmax(0,1fr); gap: 1rem; align-items: start; margin-top: 1rem; }
     .sidebar { position: sticky; top: 4.6rem; max-height: calc(100vh - 5.4rem); overflow: auto; }
     .search-box { display: grid; gap: .45rem; }
     .question-nav { display: grid; grid-template-columns: repeat(4,1fr); gap: .35rem; margin-top: .7rem; }
-    .nav-q { min-width: 0; padding: .45rem .2rem; border-color: var(--line); }
+    .nav-q { min-width: 0; padding: .45rem .2rem; border-color: var(--line); background: linear-gradient(145deg, #ffffff, #eef1ff); }
     .nav-q.correct { color: #0c4c31; background: var(--green-soft); border-color: #7ab394; }
     .nav-q.wrong { color: #762626; background: var(--red-soft); border-color: #d48a8a; }
-    .nav-q.current { box-shadow: inset 0 0 0 .16rem #f1a82f; }
+    .nav-q.current { box-shadow: inset 0 0 0 .16rem #e5a0be; }
     .questions { display: grid; gap: 1rem; min-width: 0; }
     .question-card { border: 1px solid var(--line); border-left: .48rem solid var(--teal); border-radius: 1rem; background: var(--paper); box-shadow: var(--shadow); overflow: clip; scroll-margin-top: 5rem; }
     .question-card[data-chapter^="第3章"] { border-left-color: var(--amber); }
     .question-card[data-chapter^="第5章"], .question-card[data-chapter^="第6章"] { border-left-color: var(--earth); }
-    .question-head { display: flex; gap: .6rem; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; padding: .9rem 1rem .65rem; border-bottom: 1px solid #e4ebe7; }
+    .question-head { display: flex; gap: .6rem; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; padding: .9rem 1rem .65rem; border-bottom: 1px solid #e4e9f3; background: linear-gradient(135deg, #f0fbff, #fff3f8); }
+    .question-card[data-chapter^="第3章"] .question-head { background: linear-gradient(135deg, #fff8e8, #fff0f5); }
+    .question-card[data-chapter^="第5章"] .question-head, .question-card[data-chapter^="第6章"] .question-head { background: linear-gradient(135deg, #f0efff, #eefaff); }
     .question-title { margin: 0; font-size: 1.15em; }
     .source { color: var(--muted); font-weight: 700; }
     .badges { display: flex; flex-wrap: wrap; gap: .35rem; }
-    .badge { display: inline-flex; align-items: center; border-radius: 999px; padding: .22rem .58rem; background: var(--teal-soft); color: #12534f; font-size: .84em; font-weight: 750; }
-    .question-card[data-chapter^="第3章"] .badge { background: var(--amber-soft); color: #76420d; }
-    .question-card[data-chapter^="第5章"] .badge, .question-card[data-chapter^="第6章"] .badge { background: var(--earth-soft); color: #63442f; }
+    .badge { display: inline-flex; align-items: center; border-radius: 999px; padding: .22rem .58rem; background: linear-gradient(135deg, #ddf8f3, #eaf7ff); color: #286c70; font-size: .84em; font-weight: 750; }
+    .question-card[data-chapter^="第3章"] .badge { background: linear-gradient(135deg, #fff1c9, #ffe8ef); color: #815029; }
+    .question-card[data-chapter^="第5章"] .badge, .question-card[data-chapter^="第6章"] .badge { background: linear-gradient(135deg, #ece7ff, #e8f4ff); color: #5e5192; }
     .question-body { padding: 1rem; }
     .image-frame { position: relative; width: 100%; border: 1px solid #b8c7c4; border-radius: .7rem; overflow: hidden; background: white; }
     .image-frame img { display: block; width: 100%; height: auto; }
-    .zoom-button { position: absolute; right: .5rem; top: .5rem; z-index: 3; color: white; background: rgba(23,63,79,.88); }
+    .zoom-button { position: absolute; right: .5rem; top: .5rem; z-index: 3; color: white; background: linear-gradient(135deg, rgba(93,109,199,.94), rgba(45,145,140,.94)); }
     .answer-controls { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .55rem; margin-top: .8rem; }
-    .answer-button { min-height: 3.1rem; border: 1px solid #90a4a1; background: #f8fbfa; font-size: 1.1em; }
+    .answer-button { min-height: 3.1rem; border: 1px solid #b8c7dc; background: linear-gradient(145deg, #ffffff, #eef4ff); font-size: 1.1em; }
     .answer-button.selected { box-shadow: inset 0 0 0 .18rem var(--blue); }
     .answer-button.correct { color: #0d4e33; background: var(--green-soft); border-color: #6cad8b; }
     .answer-button.wrong { color: #782727; background: var(--red-soft); border-color: #d78585; }
     .question-actions { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-top: .7rem; }
-    .review-button[aria-pressed="true"] { background: #fff0bf; border-color: #d58d18; }
+    .review-button { background: linear-gradient(135deg, #fff, #fff0f5); border-color: #ead1df; }
+    .review-button[aria-pressed="true"] { background: linear-gradient(135deg, #fff1b9, #ffd7e7); border-color: #dc8ba5; }
     .feedback { min-height: 1.8rem; font-weight: 800; }
     .analysis-panel { margin-top: .85rem; border-top: 1px dashed #aebfbb; padding-top: .8rem; }
     .analysis-panel[hidden] { display: none !important; }
-    .official-answer { margin: 0 0 .65rem; padding: .62rem .75rem; border-radius: .65rem; background: var(--blue-soft); font-weight: 800; }
+    .official-answer { margin: 0 0 .65rem; padding: .62rem .75rem; border-radius: .65rem; background: linear-gradient(135deg, #eaf0ff, #e4faf6); font-weight: 800; }
     .option-analysis { display: grid; grid-template-columns: 2.6rem minmax(0,1fr); gap: .7rem; padding: .7rem; border: 1px solid var(--line); border-radius: .72rem; margin-top: .5rem; background: white; }
-    .option-analysis.correct { border-color: #7ab394; background: var(--green-soft); }
-    .option-analysis.wrong { border-color: #d9a0a0; background: #fff8f8; }
+    .option-analysis.correct { border-color: #83c5aa; background: linear-gradient(135deg, #e5f8ef, #eefbff); }
+    .option-analysis.wrong { border-color: #e4b2c2; background: linear-gradient(135deg, #fff8fb, #fff2f5); }
     .option-letter { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; border-radius: 50%; background: #e7eeec; font-weight: 900; }
-    .option-analysis.correct .option-letter { color: white; background: var(--green); }
-    .option-analysis.wrong .option-letter { color: white; background: var(--red); }
+    .option-analysis.correct .option-letter { color: white; background: linear-gradient(135deg, #38a87f, #45a9a2); }
+    .option-analysis.wrong .option-letter { color: white; background: linear-gradient(135deg, #d95f7d, #b965a5); }
     .option-analysis p { margin: .15rem 0; }
     .empty-state { padding: 2rem; border: 1px dashed #9db0ae; border-radius: 1rem; text-align: center; background: white; }
     .result-card { display: none; }
     .result-card.open { display: block; }
     dialog { width: min(96vw, 1250px); max-height: 94vh; border: 0; border-radius: 1rem; padding: 0; box-shadow: 0 18px 60px rgba(0,0,0,.35); }
     dialog::backdrop { background: rgba(10,25,32,.74); }
-    .dialog-head { position: sticky; top: 0; z-index: 3; display: flex; justify-content: space-between; align-items: center; padding: .7rem; color: white; background: var(--navy); }
+    .dialog-head { position: sticky; top: 0; z-index: 3; display: flex; justify-content: space-between; align-items: center; padding: .7rem; color: white; background: linear-gradient(115deg, #6676d8, #3ca29d, #d87999); }
     .zoom-content { position: relative; background: white; overflow: auto; max-height: calc(94vh - 3.5rem); }
     .zoom-content img { display: block; width: max(100%, 1100px); height: auto; }
     .conflict-body { padding: 1rem; }
@@ -193,7 +207,7 @@
       .questions { gap: 0; }
       .question-card { display: block !important; break-inside: avoid; box-shadow: none; margin: 0 0 3mm; border: 1px solid #777; border-left-width: 1px; border-radius: 2mm; }
       .question-card.print-hidden { display: none !important; }
-      .question-head { display: block; padding: 1.4mm 2.2mm 1.2mm; }
+      .question-head { display: block; padding: 1.4mm 2.2mm 1.2mm; background: white !important; }
       .question-head > div { display: flex; flex-wrap: wrap; align-items: center; gap: 1mm 3mm; }
       .question-title { font-size: 9.5pt; line-height: 1.2; }
       .source { font-weight: 700; }
@@ -229,15 +243,15 @@
   <div class="shell">
     <section class="hero" aria-labelledby="pageTitle">
       <div>
-        <p>114 學年度第一學期｜國三第二次段考｜七賢・五福・左營・明華</p>
-        <h1 id="pageTitle">自然（5）四校考題<br>分類解析與測驗</h1>
-        <p>依章節、主題重新編排 200 題。每題保留原卷完整題幹、附圖與全部選項，解析與測驗共用正式答案及選項解析。</p>
+        <p>🌈 114 學年度第一學期｜國三第二次段考｜七賢・五福・左營・明華</p>
+        <h1 id="pageTitle">🧪 自然（5）四校考題<br>分類解析與測驗</h1>
+        <p>✨ 依章節、主題重新編排 200 題。每題保留原卷完整題幹、附圖與全部選項，解析與測驗共用正式答案及選項解析。</p>
       </div>
       <div class="hero-stats" aria-label="即時作答統計">
-        <div class="stat"><strong id="visibleCount">200</strong><span>目前題數</span></div>
-        <div class="stat"><strong id="answeredCount">0</strong><span>已作答</span></div>
-        <div class="stat"><strong id="correctCount">0</strong><span>答對</span></div>
-        <div class="stat"><strong id="wrongCount">0</strong><span>答錯</span></div>
+        <div class="stat"><strong id="visibleCount">200</strong><span>📚 目前題數</span></div>
+        <div class="stat"><strong id="answeredCount">0</strong><span>✍️ 已作答</span></div>
+        <div class="stat"><strong id="correctCount">0</strong><span>🎉 答對</span></div>
+        <div class="stat"><strong id="wrongCount">0</strong><span>🌱 答錯</span></div>
       </div>
     </section>
     <div id="offlineBanner" class="offline-banner" hidden>本機檔案模式：訪客進度僅儲存在此裝置，不跨裝置同步。題目、作答、篩選、字級與列印仍可正常使用。</div>
@@ -256,9 +270,9 @@
           <p><button id="guestButton" type="button">切換訪客</button> <button id="reconnectButton" type="button">重新連線</button></p>
         </div>
         <div>
-          <h3>快速選取</h3>
+          <h3>⚡ 快速選取</h3>
           <div id="learnerList" class="learner-list"><span class="muted">連線後顯示共享學習者。</span></div>
-          <h3>目前身分</h3>
+          <h3>🪪 目前身分</h3>
           <p id="currentLearnerDetail">訪客・僅儲存在此裝置</p>
         </div>
       </div>
@@ -267,10 +281,10 @@
     <section class="panel filter-panel" aria-labelledby="filterTitle">
       <div class="filter-summary">
         <h2 id="filterTitle">🎯 選擇學習／測驗單元</h2>
-        <button id="selectAll" type="button">全選</button>
-        <button id="clearAll" type="button">清除</button>
-        <button id="printAnalysis" class="primary" type="button">列印選取單元（含解析）</button>
-        <button id="printQuiz" type="button">列印選取單元（練習卷）</button>
+        <button id="selectAll" type="button">🌟 全選</button>
+        <button id="clearAll" type="button">🫧 清除</button>
+        <button id="printAnalysis" class="primary" type="button">🖨️ 列印選取單元（含解析）</button>
+        <button id="printQuiz" type="button">📝 列印選取單元（練習卷）</button>
         <span id="printStatus" class="print-status" aria-live="polite"></span>
       </div>
       <p>可複選主題；解析與測驗使用同一組篩選。列印尺寸固定為 A4 直式。</p>
@@ -283,36 +297,36 @@
     </section>
 
     <section id="resultCard" class="panel result-card" aria-live="polite">
-      <h2>本輪結果</h2>
+      <h2>🏆 本輪結果</h2>
       <p id="resultSummary"></p>
       <div class="toolbar-panel">
-        <button id="retryWrong" type="button">只重練錯題</button>
-        <button id="restartAll" type="button">重新開始全部</button>
+        <button id="retryWrong" type="button">🔁 只重練錯題</button>
+        <button id="restartAll" type="button">🌱 重新開始全部</button>
       </div>
     </section>
 
     <div class="workspace">
       <aside class="panel sidebar" aria-label="題號與搜尋">
         <div class="search-box">
-          <label for="searchInput"><strong>搜尋題號／來源／單元</strong></label>
+          <label for="searchInput"><strong>🔍 搜尋題號／來源／單元</strong></label>
           <input id="searchInput" type="search" placeholder="例：七賢、功率、原 15">
         </div>
-        <p id="remainingText">尚餘 200 題</p>
+        <p id="remainingText">📝 尚餘 200 題</p>
         <div id="questionNav" class="question-nav"></div>
-        <p><button id="submitQuiz" class="primary" type="button" disabled>全部完成後交卷</button></p>
+        <p><button id="submitQuiz" class="primary" type="button" disabled>📮 全部完成後交卷</button></p>
       </aside>
       <main id="questions" class="questions" tabindex="-1"></main>
     </div>
 
     <section id="printAnswerSheet" class="print-answer-sheet" aria-labelledby="printAnswerTitle">
-      <h2 id="printAnswerTitle">測驗題答案</h2>
+      <h2 id="printAnswerTitle">📝 測驗題答案</h2>
       <p id="printAnswerSummary"></p>
       <div id="printAnswerGrid" class="print-answer-grid"></div>
     </section>
   </div>
 
   <dialog id="zoomDialog" aria-labelledby="zoomTitle">
-    <div class="dialog-head"><strong id="zoomTitle">放大題目</strong><button id="closeZoom" type="button">關閉</button></div>
+    <div class="dialog-head"><strong id="zoomTitle">🔎 放大題目</strong><button id="closeZoom" type="button">✕ 關閉</button></div>
     <div id="zoomContent" class="zoom-content"></div>
   </dialog>
   <dialog id="conflictDialog" aria-labelledby="conflictTitle">
@@ -467,10 +481,10 @@
       const article = document.createElement('article'); article.className='question-card'; article.id='q-'+q.id; article.dataset.id=q.id; article.dataset.chapter=q.chapter; article.dataset.topic=topicKey(q);
       const head = document.createElement('header'); head.className='question-head';
       const left = document.createElement('div');
-      const title = document.createElement('h2'); title.className='question-title'; title.textContent=`新題號 ${q.number}　`;
+      const title = document.createElement('h2'); title.className='question-title'; title.textContent=`🧩 新題號 ${q.number}　`;
       const source = document.createElement('span'); source.className='source'; source.textContent=`[${q.source}-原始題號 ${q.originalNumber}]`; title.append(source);
       const badges=document.createElement('div'); badges.className='badges';
-      [q.chapter,q.section,q.theme].forEach(v=>{const b=document.createElement('span');b.className='badge';b.textContent=v;badges.append(b)});
+      const chapterIcon=q.chapter.startsWith('第3章')?'⚡':q.chapter.startsWith('第5章')?'🌍':q.chapter.startsWith('第6章')?'🪨':'🔬';[[chapterIcon,q.chapter],['📘',q.section],['💡',q.theme]].forEach(([icon,v])=>{const b=document.createElement('span');b.className='badge';b.textContent=`${icon} ${v}`;badges.append(b)});
       left.append(title,badges);
       const flag=document.createElement('button');flag.type='button';flag.className='review-button';flag.textContent='🚩 標記複習';flag.setAttribute('aria-pressed',!!state.progress.review[q.id]);flag.addEventListener('click',()=>{state.progress.review[q.id]=!state.progress.review[q.id];flag.setAttribute('aria-pressed',!!state.progress.review[q.id]);saveLocalProgress(true);queueCloudSave();});
       head.append(left,flag); article.append(head);
@@ -500,27 +514,27 @@
       for(const card of document.querySelectorAll('.question-card')) card.hidden=!state.visibleIds.has(card.dataset.id);
       $('visibleCount').textContent=visible.length;
       renderNav(); refreshStats();
-      if(!visible.length){const empty=document.createElement('div');empty.className='empty-state';empty.id='emptyState';empty.textContent='目前沒有符合條件的題目，請重新選擇單元或清除搜尋。';$('questions').append(empty)} else $('emptyState')?.remove();
+      if(!visible.length){const empty=document.createElement('div');empty.className='empty-state';empty.id='emptyState';empty.textContent='🫧 目前沒有符合條件的題目，請重新選擇單元或清除搜尋。';$('questions').append(empty)} else $('emptyState')?.remove();
     }
     function renderNav(){const host=$('questionNav');host.textContent='';for(const q of currentQuestionSet()){const b=document.createElement('button');b.type='button';b.className='nav-q';b.dataset.id=q.id;b.textContent=q.number;b.setAttribute('aria-label',`跳到新題號 ${q.number}，${q.source}原題 ${q.originalNumber}`);b.addEventListener('click',()=>{const el=$('q-'+q.id);el.scrollIntoView({block:'start'});el.focus?.({preventScroll:true});});host.append(b)}refreshNavStates()}
     function refreshNavStates(){for(const b of document.querySelectorAll('.nav-q')){const q=QUESTIONS.find(x=>x.id===b.dataset.id);const ans=state.progress.answers[q.id];b.classList.toggle('correct',!!ans&&ans===q.answer);b.classList.toggle('wrong',!!ans&&ans!==q.answer)}}
     function answerQuestion(id,letter){if(state.progress.answers[id])return;state.progress.answers[id]=letter;state.progress.submitted=false;saveLocalProgress(true);refreshQuestionStates();queueCloudSave();}
     function refreshQuestionStates(){
-      for(const q of QUESTIONS){const card=$('q-'+q.id);if(!card)continue;const chosen=state.progress.answers[q.id];const answered=!!chosen;const reveal=state.mode==='analysis'||answered;const panel=card.querySelector('.analysis-panel');panel.hidden=!reveal;const feedback=card.querySelector('.feedback');feedback.textContent=answered?(chosen===q.answer?'✅ 回答正確':'❌ 回答錯誤'):(state.mode==='analysis'?'解析介面：直接顯示正式答案與完整解析。':'');for(const btn of card.querySelectorAll('.answer-button')){const letter=btn.dataset.letter;btn.disabled=answered;btn.classList.toggle('selected',chosen===letter);btn.classList.toggle('correct',reveal&&letter===q.answer);btn.classList.toggle('wrong',answered&&chosen===letter&&chosen!==q.answer)}card.querySelector('.review-button').setAttribute('aria-pressed',!!state.progress.review[q.id]);}
+      for(const q of QUESTIONS){const card=$('q-'+q.id);if(!card)continue;const chosen=state.progress.answers[q.id];const answered=!!chosen;const reveal=state.mode==='analysis'||answered;const panel=card.querySelector('.analysis-panel');panel.hidden=!reveal;const feedback=card.querySelector('.feedback');feedback.textContent=answered?(chosen===q.answer?'🎉 回答正確':'🌱 回答錯誤，再看一次解析吧！'):(state.mode==='analysis'?'📚 解析介面：直接顯示正式答案與完整解析。':'');for(const btn of card.querySelectorAll('.answer-button')){const letter=btn.dataset.letter;btn.disabled=answered;btn.classList.toggle('selected',chosen===letter);btn.classList.toggle('correct',reveal&&letter===q.answer);btn.classList.toggle('wrong',answered&&chosen===letter&&chosen!==q.answer)}card.querySelector('.review-button').setAttribute('aria-pressed',!!state.progress.review[q.id]);}
       refreshStats();refreshNavStates();
     }
-    function refreshStats(){const visible=currentQuestionSet();let answered=0,correct=0;for(const q of visible){const a=state.progress.answers[q.id];if(a){answered++;if(a===q.answer)correct++;}}$('answeredCount').textContent=answered;$('correctCount').textContent=correct;$('wrongCount').textContent=answered-correct;$('remainingText').textContent=`尚餘 ${Math.max(0,visible.length-answered)} 題`;$('submitQuiz').disabled=!visible.length||answered!==visible.length;$('submitQuiz').textContent=answered===visible.length&&visible.length?'交卷並查看結果':'全部完成後交卷';}
+    function refreshStats(){const visible=currentQuestionSet();let answered=0,correct=0;for(const q of visible){const a=state.progress.answers[q.id];if(a){answered++;if(a===q.answer)correct++;}}$('answeredCount').textContent=answered;$('correctCount').textContent=correct;$('wrongCount').textContent=answered-correct;$('remainingText').textContent=`📝 尚餘 ${Math.max(0,visible.length-answered)} 題`;$('submitQuiz').disabled=!visible.length||answered!==visible.length;$('submitQuiz').textContent=answered===visible.length&&visible.length?'📮 交卷並查看結果':'📮 全部完成後交卷';}
     function openZoom(q){const host=$('zoomContent');host.textContent='';const wrap=document.createElement('div');wrap.style.position='relative';const img=document.createElement('img');img.src=q.printImage||q.image;img.alt=`放大檢視：${q.source}原題 ${q.originalNumber}`;wrap.append(img);host.append(wrap);$('zoomTitle').textContent=`新題號 ${q.number}｜${q.source}-原始題號 ${q.originalNumber}`;$('zoomDialog').showModal();}
     function submitQuiz(){const visible=currentQuestionSet();if(!visible.length||visible.some(q=>!state.progress.answers[q.id]))return;const correct=visible.filter(q=>state.progress.answers[q.id]===q.answer).length;const score=Math.round(correct/visible.length*1000)/10;state.progress.submitted=true;state.progress.completedAt=new Date().toISOString();const record={attemptId:state.progress.attemptId,quizId:QUIZ_ID,articleTitle:DATA.articleTitle,quizVersion:QUIZ_VERSION,learnerId:state.identity.learnerId,nickname:state.identity.nickname,avatarId:state.identity.avatarId,practiceType:state.progress.practiceType,totalQuestions:visible.length,correct,wrong:visible.length-correct,score,completedAt:state.progress.completedAt,targetQuestionIds:visible.map(q=>q.id),baseAttemptId:state.progress.baseAttemptId,retainedCorrectFromBase:state.progress.retainedCorrectFromBase,sync:state.identity.type==='guest'?'local':'pending'};if(!state.history.some(r=>r.attemptId===record.attemptId))state.history.unshift(record);saveLocalProgress(true);$('resultSummary').textContent=`答對 ${correct} 題、答錯 ${visible.length-correct} 題，共 ${visible.length} 題；成績 ${score} 分。`;$('resultCard').classList.add('open');$('resultCard').scrollIntoView({behavior:'smooth'});saveAttemptCloud(record);queueCloudSave();}
     function restartAll(){if(!confirm('確定建立新的空白測驗輪次？歷次成績會保留。'))return;const generation=(state.progress.resetGeneration||0)+1;state.progress={...blankProgress(),resetGeneration:generation};saveLocalProgress(true);$('resultCard').classList.remove('open');refreshQuestionStates();queueCloudSave();}
     function retryWrong(){const wrong=QUESTIONS.filter(q=>state.progress.answers[q.id]&&state.progress.answers[q.id]!==q.answer).map(q=>q.id);if(!wrong.length){alert('本輪沒有錯題。');return;}const base=state.progress.attemptId;const retained=Object.keys(state.progress.answers).filter(id=>{const q=QUESTIONS.find(x=>x.id===id);return q&&state.progress.answers[id]===q.answer}).length;state.progress={...blankProgress(),practiceType:'wrongRetry',targetIds:wrong,baseAttemptId:base,retainedCorrectFromBase:retained,resetGeneration:(state.progress.resetGeneration||0)+1};saveLocalProgress(true);$('resultCard').classList.remove('open');applyVisibility();refreshQuestionStates();queueCloudSave();}
     function usePrintImages(enabled){for(const img of document.querySelectorAll('.question-card .image-frame > img')){const card=img.closest('.question-card');const selected=card&&!card.hidden&&!card.classList.contains('print-hidden');const mode=enabled&&selected?'print':'screen';if(mode==='print'){img.loading='eager';img.decoding='sync';}else{img.loading='lazy';img.decoding='async';}if(img.dataset.assetMode===mode)continue;const next=mode==='print'?img.dataset.printSrc:img.dataset.screenSrc;if(next){img.src=next;img.dataset.assetMode=mode;}}}
     function waitForImageReady(img){return new Promise((resolve,reject)=>{const finishDecode=()=>{const job=typeof img.decode==='function'?img.decode().catch(()=>{}):Promise.resolve();job.finally(resolve);};if(img.complete&&img.naturalWidth>0){finishDecode();return;}let settled=false;const done=()=>{if(settled)return;settled=true;img.removeEventListener('load',done);img.removeEventListener('error',done);if(img.naturalWidth>0)finishDecode();else reject(new Error('print-image-error'));};img.addEventListener('load',done,{once:true});img.addEventListener('error',done,{once:true});if(img.complete)done();});}
-    async function preloadPrintImages(images){let ready=0;await Promise.all(images.map(async img=>{await waitForImageReady(img);ready++;$('printStatus').textContent=`高解析度題圖已載入 ${ready}／${images.length}…`;}));}
+    async function preloadPrintImages(images){let ready=0;await Promise.all(images.map(async img=>{await waitForImageReady(img);ready++;$('printStatus').textContent=`🖨️ 高解析度題圖已載入 ${ready}／${images.length}…`;}));}
     function renderPrintAnswerSheet(){const selected=currentQuestionSet();const host=$('printAnswerGrid');host.textContent='';for(const q of selected){const item=document.createElement('span');item.className='print-answer-item';item.textContent=`${q.number}. ${q.answer}`;host.append(item)}$('printAnswerSummary').textContent=`共 ${selected.length} 題；答案依分類後的新題號排列。`;}
-    function setPrintBusy(busy,message=''){document.body.classList.toggle('print-preparing',busy);$('printAnalysis').disabled=busy;$('printQuiz').disabled=busy;$('printStatus').textContent=message;}
+    function setPrintBusy(busy,message=''){document.body.classList.toggle('print-preparing',busy);$('printAnalysis').disabled=busy;$('printQuiz').disabled=busy;$('printStatus').textContent=message?`🖨️ ${message}`:'';}
     function restoreAfterPrint(){usePrintImages(false);document.body.classList.remove('print-quiz','print-preparing');for(const c of document.querySelectorAll('.question-card'))c.classList.remove('print-hidden')}
-    async function printSelected(kind){if(document.body.classList.contains('print-preparing'))return;const selectedCards=[...document.querySelectorAll('.question-card')].filter(card=>state.visibleIds.has(card.dataset.id));if(!selectedCards.length){$('printStatus').textContent='請先勾選至少一個有題目的單元。';return;}let finalMessage='';setPrintBusy(true,`正在準備 ${selectedCards.length} 題的高解析度列印圖，請稍候…`);try{document.body.classList.toggle('print-quiz',kind==='quiz');for(const card of document.querySelectorAll('.question-card'))card.classList.toggle('print-hidden',!state.visibleIds.has(card.dataset.id));renderPrintAnswerSheet();usePrintImages(true);const visible=selectedCards.map(card=>card.querySelector('.image-frame > img')).filter(Boolean);const timeoutMs=Math.min(90000,Math.max(30000,visible.length*1200));const timedOut=new Promise((_,reject)=>setTimeout(()=>reject(new Error('print-image-timeout')),timeoutMs));await Promise.race([preloadPrintImages(visible),timedOut]);$('printStatus').textContent='全部題圖已載入，正在開啟列印視窗…';await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));window.print();}catch(error){console.error('列印準備失敗',error);finalMessage=String(error&&error.message)==='print-image-timeout'?'高解析度題圖載入逾時，請縮小選取範圍或重新整理後再試。':'列印準備失敗，請重新整理後再試。';}finally{setTimeout(()=>{restoreAfterPrint();setPrintBusy(false,finalMessage);},1000);}}
+    async function printSelected(kind){if(document.body.classList.contains('print-preparing'))return;const selectedCards=[...document.querySelectorAll('.question-card')].filter(card=>state.visibleIds.has(card.dataset.id));if(!selectedCards.length){$('printStatus').textContent='🫧 請先勾選至少一個有題目的單元。';return;}let finalMessage='';setPrintBusy(true,`正在準備 ${selectedCards.length} 題的高解析度列印圖，請稍候…`);try{document.body.classList.toggle('print-quiz',kind==='quiz');for(const card of document.querySelectorAll('.question-card'))card.classList.toggle('print-hidden',!state.visibleIds.has(card.dataset.id));renderPrintAnswerSheet();usePrintImages(true);const visible=selectedCards.map(card=>card.querySelector('.image-frame > img')).filter(Boolean);const timeoutMs=Math.min(90000,Math.max(30000,visible.length*1200));const timedOut=new Promise((_,reject)=>setTimeout(()=>reject(new Error('print-image-timeout')),timeoutMs));await Promise.race([preloadPrintImages(visible),timedOut]);$('printStatus').textContent='✅ 全部題圖已載入，正在開啟列印視窗…';await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));window.print();}catch(error){console.error('列印準備失敗',error);finalMessage=String(error&&error.message)==='print-image-timeout'?'高解析度題圖載入逾時，請縮小選取範圍或重新整理後再試。':'列印準備失敗，請重新整理後再試。';}finally{setTimeout(()=>{restoreAfterPrint();setPrintBusy(false,finalMessage);},1000);}}
     function renderAvatars(){const host=$('avatarList');host.textContent='';for(const avatar of AVATARS){const b=document.createElement('button');b.type='button';b.textContent=avatar;b.setAttribute('aria-label','選擇頭像 '+avatar);b.setAttribute('aria-pressed',state.avatarId===avatar);b.addEventListener('click',()=>{state.avatarId=avatar;renderAvatars()});host.append(b)}}
     function renderLearners(){const host=$('learnerList');host.textContent='';if(!state.learners.length){const span=document.createElement('span');span.textContent=state.cloudReady?'尚未建立共享學習者。':'連線後顯示共享學習者。';host.append(span);return;}for(const learner of state.learners){const b=document.createElement('button');b.type='button';b.className='learner-chip';const av=document.createElement('span');av.className='avatar';av.textContent=learner.avatarId||'🐱';const name=document.createElement('strong');name.textContent=learner.nickname||'未命名';const small=document.createElement('small');small.textContent=`識別碼 ${String(learner.learnerId||'').slice(-6)}`;b.append(av,name,small);b.addEventListener('click',()=>selectLearner(learner));host.append(b)}}
     function switchGuest(){stopLearnerListener();state.identity={type:'guest',learnerId:'guest',nickname:'訪客',avatarId:'🪐'};localStorage.setItem(BASE_KEY+':identity',JSON.stringify(state.identity));loadProgress();announceIdentity();refreshQuestionStates();}
